@@ -1,21 +1,27 @@
-#container {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
+.container {
+  position: relative;
+  top: 50%;
+  transform: translateY(25%);
 }
 
-#header {
+.login-form {
+  width: 35%;
+  padding: 0 25px 25px 25px;
+  border: 2px solid #848689;
+  border-radius: 5px;
+}
+
+.login-btn {
+  margin-top: 20px;
+  width: 100%;
   background: #ff402e;
-}
-
-#router-outlet {
-  flex-grow: 1
+  color: white
 }
 
 .switch {
-  position: fixed;
-  top: 92%;
-  left: 8%;
+  position: absolute;
+  top: 90%;
+  left: 10%;
   width: 100px;
   height: 35px;
   text-align: center;
@@ -27,7 +33,6 @@
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-radius: 25px;
-  box-shadow: 2px 2px 3px #999;
 }
 .switch span {
   position: absolute;
@@ -35,6 +40,7 @@
   height: 4px;
   top: 45%;
   left: 40%;
+  // margin: -2px 0px 0px -4px;
   background: #fff;
   display: block;
   -webkit-transform: rotate(90deg);
@@ -49,7 +55,21 @@
   transition: all 0.2s ease;
   border-radius: 2px;
 }
-
+// .switch span:after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   width: 4px;
+//   height: 12px;
+//   margin-top: -8px;
+//   background: #fff;
+//   -webkit-transition: all 0.2s ease;
+//   -moz-transition: all 0.2s ease;
+//   -o-transition: all 0.2s ease;
+//   -ms-transition: all 0.2s ease;
+//   transition: all 0.2s ease;
+//   border-radius: 2px;
+// }
 input[type=radio] {
   display: none;
 }
@@ -78,6 +98,7 @@ label[for=no] {
 }
 #no:checked ~ .switch span {
   background: #fff;
+  // margin-left: -8px;
 }
 #no:checked ~ .switch span:after {
   background: #fff;
@@ -91,4 +112,3 @@ label[for=no] {
 #no:checked ~ .switch label[for=no] {
   color: #fff;
 }
-

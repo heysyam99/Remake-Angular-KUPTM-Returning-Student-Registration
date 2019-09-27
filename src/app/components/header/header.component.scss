@@ -1,0 +1,11 @@
+.header {
+  text-align: center;
+  color: white;
+  transition: 0.5s
+}
+
+.header h1 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

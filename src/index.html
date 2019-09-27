@@ -1,13 +1,160 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>RemakeStudentRegistration</title>
+  <title>Student Registration</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <style>
+    @media (max-width: 900px) {
+      .wrapper {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+      }
+    }
+
+    .loaders {
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0066CC;
+      color: #F9E5FF;
+      font-family: sans-serif;
+      font-size: 40px;
+      font-size: 2.5rem;
+      box-shadow: #0000001c 0px 15px 30px 0px, rgba(0, 0, 0, 0.08) 0px 5px 15px 0px;
+    }
+
+    .loaders-bg-2 {
+      background-color: #FC4532;
+    }
+
+    .loaders-bg-3 {
+      background-color: #FF29C8;
+    }
+
+    .loaders-bg-4 {
+      background-color: #0000FF;
+    }
+
+    .loader {
+      display: inline-block;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+    }
+
+    .loader-double {
+      border-radius: 50px;
+      border: 6px solid transparent;
+      border-top-color: #F9E5FF;
+      border-bottom-color: #F9E5FF;
+      -webkit-animation: spin 1.5s linear infinite;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .loader-double:before,
+    .loader-double:after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      border-radius: 50px;
+      border: 6px solid transparent;
+      border-top-color: #F9E5FF;
+      border-bottom-color: #F9E5FF;
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+      -webkit-animation: spinreverse 2s linear infinite;
+      animation: spinreverse 2s linear infinite;
+    }
+
+    .loader-double:before {
+      top: 13px;
+      left: 13px;
+      bottom: 13px;
+      right: 13px;
+      -webkit-animation: spinreverse 3s linear infinite;
+      animation: spinreverse 3s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        tranform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        tranform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+        tranform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        tranform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spinreverse {
+      0% {
+        -webkit-transform: rotate(0deg);
+        tranform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(-360deg);
+        tranform: rotate(-360deg);
+      }
+    }
+
+    @keyframes spinreverse {
+      0% {
+        -webkit-transform: rotate(0deg);
+        tranform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(-360deg);
+        tranform: rotate(-360deg);
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://rawgit.com/dabeng/OrgChart/master/demo/js/jspdf.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <app-root>
+    <!-- <main class="wrapper"> -->
+    <section class="loaders loaders-bg-2"><span class="loader loader-double"> </span> Loading...</section>
+    <!-- </main> -->
+  </app-root>
 </body>
+
 </html>

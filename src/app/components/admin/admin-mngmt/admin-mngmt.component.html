@@ -1,0 +1,42 @@
+<div id="data-grid-demo">
+  <div class="h-100 justify-content-center align-item-center" style="display: flex">
+    <h3 style="margin: 15px 0">ADMIN MANAGEMENT</h3>
+  </div>
+  <h4 style="margin: 15px 5px">Mailing Address</h4>
+  <dx-data-grid id="gridContainer" [dataSource]="mailAddressDS" [showBorders]="true" [repaintChangesOnly]="true"
+    (onRowUpdated)="onUpdateMailing($event.data)">
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing refreshMode="repaint" mode="cell" [allowUpdating]="true">
+    </dxo-editing>
+    <dxi-column dataField="id" caption="Student ID"></dxi-column>
+    <dxi-column dataField="phone" caption="Phone Number" [width]="160"></dxi-column>
+    <dxi-column dataField="address1" caption="Address 1" [width]="300"></dxi-column>
+    <dxi-column dataField="address2" caption="Address 2"></dxi-column>
+    <dxi-column dataField="postcode" caption="PostCode" [width]="160"></dxi-column>
+    <dxi-column dataField="city" caption="City"></dxi-column>
+    <dxi-column dataField="state" caption="State" [width]="160"></dxi-column>
+    <dxi-column dataField="country" caption="Country"></dxi-column>
+  </dx-data-grid>
+  <h4 style="margin: 15px 5px">Rental Address</h4>
+  <dx-data-grid id="gridContainer" [dataSource]="rentAddressDS" [showBorders]="true" [repaintChangesOnly]="true"
+    (onRowUpdated)="onUpdateRental($event.data)">
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing refreshMode="repaint" mode="cell" [allowUpdating]="true">
+    </dxo-editing>
+    <dxi-column dataField="id" caption="Student ID"></dxi-column>
+    <dxi-column dataField="address1" caption="Address 1" [width]="300"></dxi-column>
+    <dxi-column dataField="address2" caption="Address 2"></dxi-column>
+    <dxi-column dataField="postcode" caption="PostCode" [width]="160"></dxi-column>
+    <dxi-column dataField="city" caption="City"></dxi-column>
+    <dxi-column dataField="state" caption="State" [width]="160"></dxi-column>
+    <dxi-column dataField="country" caption="Country" [width]="160"></dxi-column>
+  </dx-data-grid>
+  <div class="options">
+    <div class="caption">Debugging Mode</div>
+    <div class="option">
+      <span>Session ID:</span>
+      <dx-text-box id="sessionId" [value]="sessionId">
+      </dx-text-box>
+    </div>
+  </div>
+</div>

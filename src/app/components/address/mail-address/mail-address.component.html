@@ -1,0 +1,73 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container">
+  <div class="row h-100 justify-content-center align-item-center">
+    <app-form-title [formTitle]="'Mailing Address / Permanent Address'"></app-form-title>
+  </div>
+  <form [formGroup]="mailAddressForm" style="margin-top: 35px" id="studentForm">
+    <div class="form-row">
+      <div class="col-md-6">
+        <app-form-instruction [formInstruction]="'SECTION I: TO BE COMPLETED BY STUDENT'"></app-form-instruction>
+      </div>
+      <div class="col-md-6 refresh">
+        <dx-button [hint]="'Refresh the form'" [height]="40" id="button" style="float: right; padding: 0 16px"
+          (onClick)="repopulateData()">
+          <span class='dx-button-text'>{{ 'Refresh' | translate }}</span>
+        </dx-button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="inline-flex">
+          <app-input-title [inputTitle]="'Phone Number'"></app-input-title>
+          <img data-toggle="tooltip" data-placement="bottom"
+            title="Please use an invalid phone number"
+            style="width: 20px; height: 20px" src="https://img.icons8.com/ios-filled/100/000000/ask-question.png">
+        </div>
+        <dx-text-box formControlName="phone" class="form-control" (onKeyPress)="onValueChanged($event);">
+        </dx-text-box>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <app-input-title [inputTitle]="'Address 1'"></app-input-title>
+        <dx-text-area formControlName="address1" class="form-control" [readOnly]="true" [height]="35">
+        </dx-text-area>
+      </div>
+      <div class="col-md-6">
+        <app-input-title [inputTitle]="'Address 2'"></app-input-title>
+        <dx-text-area formControlName="address2" class="form-control" [readOnly]="true" [height]="35">
+        </dx-text-area>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-3">
+        <app-input-title [inputTitle]="'Postcode'"></app-input-title>
+        <dx-text-box formControlName="postcode" class="form-control" [readOnly]="true">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'City'"></app-input-title>
+        <dx-text-box formControlName="city" class="form-control" [readOnly]="true">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'State'"></app-input-title>
+        <dx-text-box formControlName="state" class="form-control" [readOnly]="true">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'Country'"></app-input-title>
+        <dx-text-box formControlName="country" class="form-control" [readOnly]="true">
+        </dx-text-box>
+      </div>
+    </div>
+    <dx-button [height]="40" id="button" type="default" class="save-btn" (onClick)="saveData(mailAddressForm.value)">
+      <span class='dx-button-text'>{{ text | translate }}</span>
+    </dx-button>
+  </form>
+</div>
+
+<dx-load-panel #loadPanel [position]="{ of: '#studentForm' }" [(visible)]="loadingVisible" [showIndicator]="true"
+  [showPane]="true" [shading]="true" [closeOnOutsideClick]="false" (onShown)="onShown()" (onHidden)="onHidden()">
+</dx-load-panel>

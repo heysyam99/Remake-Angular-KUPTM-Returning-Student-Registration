@@ -1,0 +1,17 @@
+<a (click)="donwloadPDF()" class="float-top">
+  <i class="fa fa-save my-float"></i>
+</a>
+<div class="label-container-pdf">
+  <div class="label-text">{{ 'Download PDF' | translate }}</div>
+  <i class="fa fa-play label-arrow"></i>
+</div>
+
+<a class="float"
+  [swal]=" { title: 'Success !', text: 'Your have successful logout', timer: 2000, showConfirmButton: false, type: 'success'}"
+  (click)="logout()">
+  <i class="fa fa-sign-out my-float"></i>
+</a>
+<div class="label-container">
+  <div class="label-text">{{ 'Log Out' | translate }}</div>
+  <i class="fa fa-play label-arrow"></i>
+</div>

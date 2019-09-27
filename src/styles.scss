@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+.save-btn {
+  padding: 0 8px !important;
+  min-width: 80px;
+  margin-top: 20px;
+  float: right
+}
+
+.flex-container {
+  display: flex
+}
+
+.inline-flex {
+  display: inline-flex
+}
+
+.inline-flex > img {
+  margin-left: 10px
+}
+
+.back-button {
+  align-items: center;
+  color: #337ab7;
+  cursor: pointer;
+}
+
+.save-finance {
+  margin-bottom: 20px
+}
+
+.loading {
+  color: white;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.dx-texteditor-input:read-only {
+  background-color: #e9ecef;
+}
+
+.dx-texteditor {
+  border: 1px solid black !important;
+  border-style: solid
+}
+
+.dx-texteditor.dx-state-focused {
+  border: 1px solid #1452A1 !important;
+  border-style: solid
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.modal-header {
+  background-color: #ff402e;
+  color: white
+}
+
+.dx-texteditor-buttons-container > .dx-button  {
+  background-color: black;
+  color: white
+}
+
+.refresh > .dx-state-hover,
+.refresh > .dx-state-focused,
+.refresh > .dx-state-active {
+  background-color: white !important
+}
+
+.swal2-container {
+  padding: 0 !important
+}
+
+.swal2-popup {
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important
+}
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1200px;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 750px
+  }
+
+  .modal-body {
+    padding: 20px 40px;
+  }
+}
+

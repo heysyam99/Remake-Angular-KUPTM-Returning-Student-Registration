@@ -1,0 +1,69 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container">
+  <div class="row h-100 justify-content-center align-item-center">
+    <app-form-title [formTitle]="'Residential Address / Current Address'"></app-form-title>
+  </div>
+
+  <form [formGroup]="rentAddressForm" style="margin-top: 35px" id="studentForm">
+    <div class="form-row">
+      <div class="col-md-6">
+        <app-form-instruction [formInstruction]="'SECTION II: TO BE COMPLETED BY STUDENT'"></app-form-instruction>
+      </div>
+      <div class="col-md-6 refresh">
+        <dx-button [height]="40" id="button" style="float: right; padding: 0 16px" (onClick)="repopulateData()">
+          <span class='dx-button-text'>{{ 'Refresh' | translate }}</span>
+        </dx-button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <app-input-title [inputTitle]="'Address 1'"></app-input-title>
+        <dx-text-area formControlName="address1" class="form-control" [height]="35">
+        </dx-text-area>
+      </div>
+      <div class="col-md-6">
+        <app-input-title [inputTitle]="'Address 2'"></app-input-title>
+        <dx-text-area formControlName="address2" class="form-control" [height]="35">
+        </dx-text-area>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-3">
+        <app-input-title [inputTitle]="'Postcode'"></app-input-title>
+        <dx-text-box formControlName="postcode" class="form-control">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'City'"></app-input-title>
+        <dx-text-box formControlName="city" class="form-control">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'State'"></app-input-title>
+        <dx-text-box formControlName="state" class="form-control">
+        </dx-text-box>
+      </div>
+      <div class="col-3">
+        <app-input-title [inputTitle]="'Country'"></app-input-title>
+        <dx-text-box formControlName="country" class="form-control">
+        </dx-text-box>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 flex-container back-button">
+        <span (click)="back()">{{ 'Back' | translate }}</span>
+      </div>
+      <div class="col-md-6">
+        <dx-button [height]="40" id="button" type="default" class="save-btn"
+          (onClick)="saveData(rentAddressForm.value)">
+          <span class='dx-button-text'>{{ text | translate }}</span>
+        </dx-button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<dx-load-panel #loadPanel [position]="{ of: '#studentForm' }" [(visible)]="loadingVisible" [showIndicator]="true"
+  [showPane]="true" [shading]="true" [closeOnOutsideClick]="false" (onShown)="onShown()" (onHidden)="onHidden()">
+</dx-load-panel>

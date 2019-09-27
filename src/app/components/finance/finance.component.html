@@ -1,0 +1,94 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container">
+  <div class="row h-100 justify-content-center align-item-center">
+    <app-form-title [formTitle]="'Finance Division: Proof of Registration Payment'"></app-form-title>
+  </div>
+  <form style="margin-top: 35px" id="convertPDF">
+    <app-form-instruction [formInstruction]="'SECTION III: TO BE COMPLETED BY STUDENT'"></app-form-instruction>
+    <div class="uploader-container">
+      <div class="img-container">
+        <app-input-title [inputTitle]="'Select Image'"></app-input-title>
+        <img class="image" [src]="imgUrl" (error)="updateUrl($event)">
+      </div>
+      <div class="img-uploader">
+        <dx-file-uploader class="uploader" selectButtonText="Select photo" accept="image/jpg"
+          (onValueChanged)="handleFileInput($event)">
+        </dx-file-uploader>
+      </div>
+    </div>
+  </form>
+  <form [formGroup]="paymentDetailsForm" style="margin-top: 35px">
+    <div class="form-row">
+      <div class="col-4">
+        <app-input-title [inputTitle]="'Refrences Number'"></app-input-title>
+        <dx-text-box formControlName="refNumber"></dx-text-box>
+      </div>
+      <div class="col-4">
+        <app-input-title [inputTitle]="'Amount Paid'"></app-input-title>
+        <dx-number-box formControlName="amount" format="RM #,##0.00" [showClearButton]="true" [showSpinButtons]="true">
+          <dxi-button name="currency" location="before" [options]="currencyButton"></dxi-button>
+          <dxi-button name="clear"></dxi-button>
+          <dxi-button name="spins"></dxi-button>
+        </dx-number-box>
+      </div>
+      <div class="col-4">
+        <app-input-title [inputTitle]="'Date Paid'"></app-input-title>
+        <dx-date-box stylingMode="outlined" [showClearButton]="true" [useMaskBehavior]="true" displayFormat="dd/MM/yyyy"
+          formControlName="datePaid" style="width: 100%">
+        </dx-date-box>
+      </div>
+      <div class="col-4">
+        <a data-toggle="modal" data-target="#exampleModal"
+          style="color: #007bff; cursor: pointer">{{ 'How to pay ?' | translate }}</a>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 flex-container back-button">
+        <span (click)="back()">{{ 'Back' | translate }}</span>
+      </div>
+      <div class="col-md-6">
+        <dx-button [height]="40" id="button" type="default" class="save-btn save-finance"
+          (onClick)="saveData(paymentDetailsForm.value)">
+          <span class='dx-button-text'>{{ 'Save' | translate}}</span>
+        </dx-button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-aledby="exampleModala" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModala">{{ 'Payment Instruction' | translate }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-a="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ol style="padding-left: 0">
+          <h5 style="text-align: center"><strong>{{ 'HOW TO MAKE PAYMENT WITH JOMPAY ?' | translate }}</strong></h5><br>
+          <img src="../../assets/JomPay.png" class="img-center"><br><br>
+          <li style="text-align: justify;">
+            {{ 'Log on to your preffered internet or mobile banking and look for JomPAY' | translate }}</li>
+          <br>
+          <li>{{ 'Enter following details :' | translate }}</li><br>
+          <img src="../../assets/JomPayRef.png"><br><br>
+          <li>{{ 'Example :' | translate }}</li><br>
+          <img style="width:200px; height: 250px" src="../../assets/example.png"><br><br>
+          <li style="text-align: justify;">{{ 'Please upload and enter your JomPAY' | translate }}
+            <strong>{{ 'references number,' | translate }} </strong>
+            <strong>{{ 'date of payment,' | translate }} </strong>{{ 'and' | translate }}
+            <strong>{{ 'amount of payment' | translate }}</strong> {{ 'in registration system for our references.' | translate }}
+          </li>
+        </ol>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'Close' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>

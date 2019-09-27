@@ -1,0 +1,207 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="container">
+  <form style="margin-top: 35px">
+    <app-form-instruction [formInstruction]="'SECTION IV: TO BE CHECK AND VERIFY BY THE STUDENT'">
+    </app-form-instruction>
+    <div style="border: 1px black solid; width: 980px">
+      <table id="PDFconvert" style='width:980px;'>
+        <tr>
+          <td style='padding: 5px 8px 8px;'>
+            <table style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 5px; width: 960px'
+              cellspacing='0' cellpadding='2' align='center' border='0'>
+              <tr>
+                <td>
+                  <img src="../../assets/logokuptm.png" class="img-fluid" alt="Responsive image"
+                    style="width: 550px; height: 250px;">
+                </td>
+                <td style='width:300px;'>
+                  <table
+                    style="width:300px;font-family: Arial,Helvetica,sans-serif; background-color: #da2e2e; color:#fff;">
+                    <tr style="height: 75px">
+                      <td colspan="2">
+                        <label style="width: 300px">&nbsp;&nbsp;ACADEMIC SESSION</label>
+                        <h4>&nbsp;&nbsp;09/19</h4>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <label style="width: 300px">&nbsp;&nbsp;SEMESTER</label>
+                        <h4>&nbsp;&nbsp;06</h4>
+                    </tr>
+                    <tr>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style='padding: 0px 8px 8px;'>
+            <div style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0);'>
+              <h6 style='margin-left: 15px;'><strong>BORANG PENDAFTARAN PELAJAR LAMA</strong></h6>
+              <br />
+              <div style='margin: 10px 15px; float: left;'><strong>ARAHAN</strong>
+                <br /><strong>1. Pelajar hendaklah mendaftar di semua bahagian yang telah ditetapkan.</strong>
+                <br /><strong>2. Borang pendaftaran mestilah dicetak dan diserahkan kepada Bahagian Kemasukan & Rekod
+                  Pelajar.</strong>
+                <br /><strong>3. Sila simpan salinan borang pendaftaran sebagai bukti pendaftaran.</strong>
+              </div>
+              <div style='margin: 10px 15px; float: left;'>INSTRUCTIONS
+                <br />1. Student MUST register at all divisions accordingly.
+                <br />2. The completed form and registration decuments MUST submit
+                to Admission & Student Record Division.
+                <br />3. Please retain a copy of your registration form as a proof of registration.
+              </div>
+              <br />
+              <br />
+              <form [formGroup]="studentDetailForm">
+                <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center' border='0'>
+                  <tbody>
+                    <tr style='background-color: #da2e2e; float: left;width:100%;padding-left:5px;'>
+                      <td
+                        style='background-color:#da2e2e; padding:5px 0px 5px 0px; float:left; width:99%; margin:5px 0px 5px 5px; font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #fff;'>
+                        <strong>Maklumat Pelajar</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor='#efeeee' style='margin:5px 0;width:100%; float:left;'>
+                        <table
+                          style='width:100%; font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 5px;margin:5px;'>
+                          <tr>
+                            <td align='left' width='25%'>NAMA :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;"
+                                formControlName="name" [readOnly]="true"></td>
+                          </tr>
+                          <tr>
+                            <td align='left' width='25%'>NOMBOR MATRIK :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;"
+                                formControlName="id" [readOnly]="true"></td>
+                          </tr>
+                          <tr>
+                            <td align='left' width='25%'>NO MYKAD / PASSPORT :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;"
+                                formControlName="ic" [readOnly]="true"></td>
+                          </tr>
+                          <tr>
+                            <td align='left' width='25%'>KOD PROGRAM :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;"
+                                formControlName="prgcode" [readOnly]="true"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+              <br />
+              <table width='100%' cellspacing='0' cellpadding='2' align='center' border='0' style='width:100%;'>
+                <tbody>
+                  <tr style='background-color: #da2e2e; padding: 5px 0px; padding-left: 5px; float: left;width:100%;'>
+                    <td
+                      style='width:50%; float:left;text-align:left;font-family: arial,helvetica,sans-serif; font-size: 12px; color: #fff;margin:5px 0px;'>
+                      <strong>Bahagian Kemasukan & Rekod Pelajar</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td bgcolor='#efeeee' style='margin:7px 0;width:100%; float:left;' colspan='2'>
+                      <table width='100%'
+                        style='width:100%; font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 10px;margin:5px;'>
+                        <tr style="height: 75px">
+                          <p style="font-size: 20px">{{ recordCompletion }}</p>
+                        </tr>
+                        <tr>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <table width='100%' cellspacing='0' cellpadding='2' align='center' border='0' style='width:100%;'>
+                <tbody>
+                  <tr style='background-color: #da2e2e; padding: 5px 0px; padding-left: 5px; float: left;width:100%;'>
+                    <td
+                      style='width:50%; float:left;text-align:left;font-family: arial,helvetica,sans-serif; font-size: 12px; color: #fff;margin:5px 0px;'>
+                      <strong>Hal Ehwal Pelajar</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td bgcolor='#efeeee' style='margin:7px 0;width:100%; float:left;' colspan='2'>
+                      <table width='100%'
+                        style='width:100%; font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 10px;margin:5px;'>
+                        <tr style="height: 75px">
+                          <p style="font-size: 20px">{{ studentwelfareCompletion }}</p>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br />
+              <br />
+              <form [formGroup]="studentfinanceForm">
+                <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center' border='0'>
+                  <tbody>
+                    <tr
+                      style='background-color: #da2e2e; padding: 5px 0px; padding-left: 10px; float: left; width: 100%; color: #fff; font-size: 12px; font-weight:bold;'>
+                      <td style=' width:47%; float:left;margin:5px 0px;'>Bahagian Kewangan</td>
+                    </tr>
+                    <tr style='width:100%; float:left;'>
+                      <td bgcolor='#efeeee' style='margin:7px 0;width:100%; float:left;padding-left: 10px;' colspan='6'>
+                        <table cellspacing='0' width='100%'
+                          style='width:100%; font-family: Arial,Helvetica,sans-serif;font-size: 12px;'>
+                          <tr>
+                            <td align='left' width='25%'>Nombor Rujukan :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;; width: 85%; background-color: #efeeee;"
+                                formControlName="refNumber" [readOnly]="true"></td>
+                          </tr>
+                          <tr>
+                            <td align='left' width='25%'>Jumlah Bayaran :</td>
+                            <td align='left'><input type="text" class="form-control"
+                                [value]="studentfinanceForm.get('amount').value | currency: 'RM '"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;; width: 85%; background-color: #efeeee;"
+                                formControlName="amount" [readOnly]="true"></td>
+                          </tr>
+                          <tr>
+                            <td align='left' width='25%'>Tarikh Bayaran:</td>
+                            <td align='left'><input type="text" class="form-control"
+                                [value]="studentfinanceForm.get('datePaid').value | date: 'dd/MM/yyyy'"
+                                style="border:1px solid; border: 0; height: 22px; width: 85%; background-color: #efeeee;; width: 85%; background-color: #efeeee;"
+                                formControlName="datePaid" [readOnly]="true"></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+              <br />
+              <br />
+              <div>
+                <label>THIS IS COMPUTER GENERATED **</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; padding: 20px 8px 8px;'></td>
+        </tr>
+      </table>
+    </div>
+
+  </form>
+</div>
+
+<!-- <div id="content" #content>
+  <dx-button [height]="40" id="button" value="download" type="default" class="save-btn" (onClick)="donwloadPDF()">
+    <span class='dx-button-text'>{{ 'Download' | translate }}</span>
+  </dx-button>
+</div> -->
+
+<app-fab-button></app-fab-button>
